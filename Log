@@ -1,0 +1,9 @@
+import discord
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
+    activity = discord.Activity(name='cheese', type=discord.ActivityType.watching)
+    await client.change_presence(activity=activity)
